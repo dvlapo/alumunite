@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Alumunite</title>
+    </head>
+    <body>
+        <div class="decor-outer">
+            <div class="decor-inner"></div>
+        </div>
+        <aside>
+            <img src="./Logo.png" alt="Alumunite logo" class="logo" />
+            <a href="#" class="back-to-login">
+                <ion-icon name="arrow-back-outline"></ion-icon>Back to Login</a
+            >
+
+            <nav>
+                <ul>
+                    <li class="personal-data" data-checked="true">
+                        <a href="#"
+                            ><ion-icon name="checkmark-circle"></ion-icon>
+                            personal data</a
+                        >
+                    </li>
+
+                    <li class="alumni-data">
+                        <a href="#">alumni data</a>
+                        <small
+                            >Select an account type to customise your Alumunite
+                            experience</small
+                        >
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="mockup">
+                <img src="./Layer 2.png" alt="" />
+            </div>
+        </aside>
+
+        <main>
+            <h1>school information</h1>
+
+            <form>
+                <label for="school">
+                    Select a school you graduated from
+                    <ion-icon name="chevron-down-sharp"></ion-icon>
+                    <select name="school" id="school">
+                        <option value="Faith">Faith Academy</option>
+                        <option value="Citizens">Citizens Schools</option>
+                        <option value="Goodwill">Goodwill college</option>
+                    </select>
+                </label>
+                <small class="add-school">
+                    Can't find your school?
+                    <span><a href="#">Add your school to the list</a></span>
+                </small>
+
+                <label for="current" class="current">
+                    <input type="radio" name="" id="" />
+                    Still schooling here presently
+                </label>
+
+                <label for="year"
+                    >Year Graduated
+                    <input type="date" placeholder="dob" />
+                </label>
+            </form>
+
+            <form>
+                <label for="school">
+                    Select a school you graduated from
+                    <ion-icon name="chevron-down-sharp"></ion-icon>
+                    <select name="school" id="school">
+                        <option value="Faith">Faith Academy</option>
+                        <option value="Citizens">Citizens Schools</option>
+                        <option value="Goodwill">Goodwill college</option>
+                    </select>
+                </label>
+                <small class="add-school">
+                    Can't find your school?
+                    <span><a href="#">Add your school to the list</a></span>
+                </small>
+
+                <label for="current" class="current">
+                    <input type="radio" name="" id="" />
+                    Still schooling here presently
+                </label>
+
+                <label for="year"
+                    >Year Graduated
+                    <input type="date" name="" id="" />
+                </label>
+            </form>
+
+            <div class="add-school-card">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    style="fill: var(--blue)"
+                >
+                    <path d="M2 7v1l11 4 9-4V7L11 4z"></path>
+                    <path
+                        d="M4 11v4.267c0 1.621 4.001 3.893 9 3.734 4-.126 6.586-1.972 7-3.467.024-.089.037-.178.037-.268V11L13 14l-5-1.667v3.213l-1-.364V12l-3-1z"
+                    ></path>
+                </svg>
+
+                <article>
+                    <h3>Add Another School</h3>
+                    <p>More schools means more connections</p>
+                </article>
+
+                <ion-icon name="add-circle-outline" role="button"></ion-icon>
+            </div>
+
+            <button>Submit</button>
+        </main>
+
+        <!-- ion-icon scripts -->
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+    </body>
+</html>

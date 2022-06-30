@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+input,
+select {
+    font-family: inherit;
+}
+ul {
+    list-style: none;
+}
+
+/* SET COLOR VARIABLES */
+:root {
+    --blue: hsl(240, 98%, 70%);
+    --blue-light: hsl(240, 98%, 75%);
+    --bg-clr: rgb(241, 252, 252);
+    --bg-clr-card: hsl(180, 65%, 93%);
+    --black: rgb(99, 99, 99);
+    --white: white;
+    --gray: rgb(226, 226, 226);
+}
+
+.decor-outer {
+    position: fixed;
+    height: 4px;
+    width: 100vw;
+    background-color: var(--blue);
+    inset: 0 auto auto 0;
+    z-index: 2;
+}
+
+.decor-inner {
+    width: 25%;
+    height: 100%;
+    background-color: var(--white);
+}
+
+body {
+    background-color: var(--bg-clr);
+    display: grid;
+    grid-template-columns: auto auto;
+    font-family: 'Rubik', sans-serif;
+    color: var(--black);
+}
+
+aside {
+    background-color: var(--white);
+    position: absolute;
+    inset: 0 auto 0 auto;
+    z-index: -1;
+    padding-block: 4rem;
+    padding-inline: 3rem;
+    border-right: 1px solid var(--gray);
+    min-height: 100vmax;
+    max-width: 30vw;
+}
+
+.logo {
+    margin-bottom: min(4rem, 5vw);
+}
+
+.back-to-login {
+    display: flex;
+    align-items: center;
+}
+
+.back-to-login ion-icon {
+    color: var(--blue);
+    font-size: 1.5em;
+    margin-right: 0.5rem;
+}
+
+nav {
+    padding-left: 2rem;
+    margin-block: 2rem 8rem;
+}
+
+ul {
+    position: relative;
+}
+
+nav a {
+    counter-reset: list;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.personal-data a {
+    counter-increment: list;
+    margin-bottom: 2rem;
+}
+
+.alumni-data a {
+    counter-increment: list list;
+    margin-bottom: 0.3rem;
+    position: relative;
+}
+
+.personal-data svg::before {
+    content: '';
+    width: 2px;
+    height: 30px;
+    background-color: var(--blue);
+    position: absolute;
+    top: 0;
+}
+
+nav a::before {
+    content: counter(list);
+    width: 2.2em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid var(--blue);
+    display: grid;
+    place-content: center;
+    color: var(--blue);
+    background-color: var(--white);
+}
+
+nav small {
+    display: block;
+    width: 80%;
+    padding-left: 3.6rem;
+    line-height: 1.7;
+    color: gray;
+}
+
+[data-checked='true'] ion-icon {
+    display: inline-block;
+    margin-left: -0.35rem;
+}
+
+[data-checked='true'] a::before {
+    display: none;
+}
+
+[data-checked='false'] ion-icon {
+    display: none;
+}
+
+[data-checked='true'] a {
+    color: rgb(155, 153, 153);
+}
+
+nav ion-icon {
+    fill: limegreen;
+    font-size: 3em;
+}
+
+.mockup {
+    border-bottom: 1px solid var(--gray);
+    margin-left: 2rem;
+    max-width: 80%;
+}
+
+@media (max-width: 1000px) {
+    .logo {
+        margin-bottom: 1.5rem;
+        width: 30%;
+        top: 5vh;
+    }
+
+    aside {
+        position: fixed;
+        inset: 0 0 auto 0;
+        padding-block: 2rem 0;
+        padding-inline: min(3rem, 5vw);
+        min-height: unset;
+        height: min(350px, 35vh);
+        max-width: 100vw;
+        align-items: center;
+        border-right: none;
+        z-index: 1;
+    }
+
+    nav {
+        padding-left: 0;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .personal-data {
+        display: none;
+    }
+
+    nav small {
+        display: none;
+        width: 80%;
+    }
+
+    .mockup {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    aside {
+        height: 24vh;
+    }
+}
+
+/* MAIN SECTION */
+main {
+    position: absolute;
+    left: calc(30vw + 6rem);
+    top: 20vh;
+    padding-bottom: 6rem;
+}
+
+main h1 {
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    font-size: clamp(1.3rem, 1.8vw + 0.9rem, 2.5rem);
+    color: #000;
+}
+
+form {
+    margin-bottom: 1rem;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--gray);
+    width: 120%;
+}
+
+main input[type='date'],
+main select {
+    display: block;
+    padding: 1.2em;
+    width: 100%;
+    margin-top: 1rem;
+    border: none;
+    outline: 1px solid var(--gray);
+    color: gray;
+    border-radius: 0.3em;
+    appearance: none;
+    --webkit-appearance: none;
+    --ms-appearance: none;
+    --moz-appearance: none;
+    --o-appearance: none;
+}
+
+ion-icon[name='chevron-down-sharp'] {
+    color: var(--blue);
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+main label {
+    margin-bottom: 0.8rem;
+    display: block;
+    position: relative;
+    font-size: clamp(1rem, 0.3vw + 0.9rem, 1.1rem);
+    font-weight: 500;
+}
+
+.add-school {
+    display: block;
+    text-align: right;
+    font-weight: 500;
+}
+
+.add-school span {
+    color: var(--blue);
+}
+
+.current {
+    margin-block: 3rem 2rem;
+}
+
+.current input {
+    transform: scale(2);
+    transform-origin: left;
+    margin-right: 1rem;
+}
+
+@media (max-width: 1000px) {
+    main {
+        position: absolute;
+        left: min(3rem, 5vw);
+        top: 40vh;
+        margin-right: min(3rem, 5vw);
+    }
+    form {
+        margin-right: min(3rem, 5vw);
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    main {
+        top: 30vh;
+    }
+}
+
+@media (max-width: 300px) {
+    aside {
+        height: 30vh;
+    }
+    main {
+        top: 40vh;
+    }
+}
+
+.add-school-card {
+    background-color: var(--bg-clr-card);
+    display: flex;
+    width: 120%;
+    padding: min(5vw, 1.4em);
+    border-radius: 0.3em;
+    gap: 2rem;
+    margin-block: 2rem;
+}
+
+.add-school-card svg {
+    transform: scale(2.2);
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+
+.add-school-card ion-icon {
+    margin-left: auto;
+    font-size: 2.5rem;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+h3 {
+    color: var(--blue);
+    font-size: clamp(0.9rem, 0.3vw + 0.8rem, 1.1rem);
+    margin-bottom: 0.2rem;
+}
+
+.add-school-card p {
+    color: gray;
+    font-size: clamp(0.75rem, 0.2vw + 0.8rem, 1rem);
+}
+
+@media (max-width: 1000px) {
+    .add-school-card {
+        width: 100%;
+        gap: 0.8em;
+    }
+
+    .add-school-card svg {
+        transform: scale(1.3);
+        margin-left: 0;
+    }
+
+    .add-school-card ion-icon {
+        font-size: 2rem;
+    }
+}
+
+button {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: clamp(0.9rem, 0.3vw + 0.8rem, 1.1rem);
+    color: var(--white);
+    background-color: var(--blue);
+    padding: 1.2em 5em;
+    border: none;
+    border-radius: 0.3em;
+    display: block;
+    margin-left: auto;
+    position: relative;
+    right: -20%;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: var(--blue-light);
+}
+
+@media (max-width: 1000px) {
+    button {
+        position: initial;
+    }
+}
